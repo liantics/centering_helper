@@ -1,0 +1,16 @@
+.outer_wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.centering_wrapper {
+  position: relative;
+  float: left;
+  left: 50%;
+}
+
+.center_element {
+  position: relative;
+  float: left;
+  left: -50%;
+}
