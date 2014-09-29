@@ -1,6 +1,6 @@
 # CenteringHelper
-A bit of css and a view helper to make it easy to center content in a view with just
-two lines of code.
+A bit of css and a view helper to make it easy to center content in a view with
+just two lines of code.
 
 ## Installation
 
@@ -17,14 +17,37 @@ Or install it yourself as:
     $ gem install centering-helper
 
 ## Usage
-Once the gem is installed, it's super simple:
+Once the gem is installed, it's super simple.
+
+### Add the CSS to your CSS file
+These are included in a css file in the gem, but the file isn't loading
+reliably, so until that's worked out (help is welcome!), add these content
+centering elements to your css file:
+
+    .outer_wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .centering_wrapper {
+      position: relative;
+      float: left;
+      left: 50%;
+    }
+
+    .center_element {
+      position: relative;
+      float: left;
+      left: -50%;
+    }
 
 ### Add Two Lines of Code to Your View
-In the view code, find the content you want to center:
+In the view code, find the content you want to center. For example, if you want
+to center an image:
 
     <%= image_tag  @project.image_url(:standard_size) %>
 
-Wrap it with the centering commands:
+Wrap the content with the centering commands:
 
     <% start_centering %>
       <%= image_tag  @project.image_url(:standard_size) %>
@@ -38,7 +61,7 @@ This will automatically wrap the content with divs that will center the content.
 ####Caveat
 The content will be centered within whatever contains it.
 
-What this means:
+#####What this means:
 
 Let's say you have a page with 2 columns of non-centered data:
 
@@ -66,9 +89,9 @@ It will not center the data within the page:
     |     | |     |
 
 So if the content ends up centered someplace other than you expected, take a
-look at the enclosing divs or any divs in between the commands. You may want to move the <% start_centering %> and
-<% end_centering %> commands to outside the enclosing divs, or to inside nested
-divs, etc.
+look at the enclosing divs or any divs in between the commands. You may want to
+move the <% start_centering %> and <% end_centering %> commands to outside the
+enclosing divs, or to inside nested divs, etc.
 
 ## Contributing
 
