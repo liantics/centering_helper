@@ -19,27 +19,14 @@ Or install it yourself as:
 ## Usage
 Once the gem is installed, it's super simple.
 
-### Add the CSS to your CSS file
-These are included in a css file in the gem, but the file isn't loading
-reliably, so until that's worked out (help is welcome!), add these content
-centering elements to your css file:
+### Include the CSS file
+Add the following to your app/stylesheets/application.css:
 
-    .outer_wrapper {
-      position: relative;
-      overflow: hidden;
-    }
+    *= require centering_helper
 
-    .centering_wrapper {
-      position: relative;
-      float: left;
-      left: 50%;
-    }
+... somewhere above:
 
-    .center_element {
-      position: relative;
-      float: left;
-      left: -50%;
-    }
+    *= require tree .
 
 ### Add Two Lines of Code to Your View
 In the view code, find the content you want to center. For example, if you want
@@ -58,10 +45,10 @@ That's it!
 This will automatically wrap the content with divs that will center the content.
 
 
-####Caveat
+#### Caveat
 The content will be centered within whatever contains it.
 
-#####What this means:
+##### What this means:
 
 Let's say you have a page with 2 columns of non-centered data:
 
