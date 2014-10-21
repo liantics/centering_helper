@@ -36,9 +36,9 @@ to center an image:
 
 Wrap the content with the centering commands:
 
-    <% start_centering %>
+    <%= start_centering %>
       <%= image_tag  @project.image_url(:standard_size) %>
-    <% end_centering %>
+    <%= end_centering %>
 
 That's it!
 
